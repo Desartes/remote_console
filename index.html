@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <h1>Hello!</h1>
+    <script type="text/javascript">
+
+        var socket = io.connect('http://localhost:8080');
+        socket.on('news', function (data) {
+            console.log(data);
+            socket.emit('my other event', { my: 'data' });
+        });
+
+        const log = function (params) {
+            socket.emit('log', params)
+            actualConsole.log(params)
+        }
+
+        const actualConsole = Object.assign({}, window.console)
+
+        window.console.log = log
+    </script>
+</body>
+<html>

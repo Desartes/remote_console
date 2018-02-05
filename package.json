@@ -1,0 +1,14 @@
+{
+  "name": "remote_console",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Filip Kolesár",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  }
+}
